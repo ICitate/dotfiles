@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/nacho/.config'
+let g:netrw_dirhist_4='/home/nacho/.config/nvim'
+let g:netrw_dirhist_3='/home/nacho/.config/nvim/lua/nacho'
+let g:netrw_dirhist_2='/home/nacho/.config/nvim/plugged'
+let g:netrw_dirhist_1='/media/nacho/Datos/Projects/pyme-stonks/inventory-api/pkg/models'
+let g:netrw_dirhist_0='/media/nacho/Datos/Projects/pyme-stonks/inventory-api/pkg'
+let g:netrw_dirhist_9='/media/nacho/Datos/Projects/pyme-stonks/inventory-api/pkg/utils'
+let g:netrw_dirhist_8='/media/nacho/Datos/Projects/pyme-stonks/inventory-api/pkg'
+let g:netrw_dirhist_7='/media/nacho/Datos/Projects/pyme-stonks/inventory-api/pkg/handlers'
+let g:netrw_dirhist_6='/media/nacho/Datos/Projects/pyme-stonks/inventory-api/pkg'
