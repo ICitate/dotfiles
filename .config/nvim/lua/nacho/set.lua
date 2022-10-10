@@ -41,3 +41,11 @@ vim.opt.shortmess:append("c")
 vim.opt.colorcolumn = "80"
 
 vim.g.mapleader = " "
+
+-- Set completeopt to have a better completion experience
+-- :help completeopt
+-- menuone: popup even when there's only one match
+-- noinsert: Do not insert text until a selection is made
+-- noselect: Do not select, force user to select one from the menu
+vim.opt.completeopt = "menuone","noinsert","noselect"
+
