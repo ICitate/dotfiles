@@ -49,3 +49,6 @@ vim.g.mapleader = " "
 -- noselect: Do not select, force user to select one from the menu
 vim.opt.completeopt = "menuone","noinsert","noselect"
 
+
+-- VimTex stuff
+vim.g.vimtex_view_method = "zathura"

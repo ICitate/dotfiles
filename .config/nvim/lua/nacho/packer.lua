@@ -17,4 +17,5 @@ return require('packer').startup(function(use)
     use 'hrsh7th/cmp-buffer'
     use 'simrat39/rust-tools.nvim'
     use 'hrsh7th/cmp-vsnip'
+    use 'lervag/vimtex' 
 end)
