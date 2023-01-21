@@ -43,6 +43,9 @@ require('lspconfig')['pyright'].setup{
 require('lspconfig')['tsserver'].setup{
     on_attach = on_attach,
     flags = lsp_flags,
+    cmd = { "typescript-language-server", "--stdio" },
+    filetypes = { "javascript", "javascriptreact", "javascript.jsx", "typescript", "typescriptreact", "typescript.tsx" },
+    init_options = { hostInfo = "neovim" }
 }
 require('lspconfig')['rust_analyzer'].setup{
     on_attach = on_attach,
@@ -51,6 +54,12 @@ require('lspconfig')['rust_analyzer'].setup{
     settings = {
       ["rust-analyzer"] = {}
     }
+}
+require'lspconfig'.svelte.setup{
+    on_attach = on_attach,
+    flags = lsp_flags,
+    cmd = { "svelteserver", "--stdio" },
+    filetypes = { "svelte" },
 }
 
 util = require "lspconfig/util"
