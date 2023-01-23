@@ -17,3 +17,7 @@ lsp.set_preferences({
 })
 
 lsp.setup()
+
+vim.diagnostic.config({
+    virtual_text = true,
+})
