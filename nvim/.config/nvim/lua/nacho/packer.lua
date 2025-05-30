@@ -5,13 +5,25 @@ return require('packer').startup(function(use)
     use 'wbthomason/packer.nvim'
 
     use {
-        'nvim-telescope/telescope.nvim', tag = '0.1.2',
+        'nvim-telescope/telescope.nvim', tag = '0.1.8',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
     use({ 'folke/tokyonight.nvim', as = 'tokyonight' })
+    use({ 'cocopon/iceberg.vim', as = 'iceberg' })
+    use({ 'bettervim/yugen.nvim', as = 'yugen' })
+    use({ 'icitate/sober.nvim', as = 'sober' })
+
+    use 'fatih/vim-go'
 
     use({'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'})
+
+    use 'tpope/vim-fugitive'
+    use 'tpope/vim-dadbod'
+    use 'kristijanhusak/vim-dadbod-ui'
+
+    use "rktjmp/shipwright.nvim"
+    use ('rktjmp/lush.nvim')
 
     use {
 	  'VonHeikemen/lsp-zero.nvim',
@@ -33,5 +45,10 @@ return require('packer').startup(function(use)
 		  {'L3MON4D3/LuaSnip'},
 		  {'rafamadriz/friendly-snippets'},
 	  },
+
+    use {
+      'nvim-lualine/lualine.nvim',
+      requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    },
   }
 end)

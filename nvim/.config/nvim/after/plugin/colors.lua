@@ -1,1 +1,5 @@
-vim.cmd.colorscheme("tokyonight-night")
+--vim.cmd.colorscheme("tokyonight-storm")
+--vim.cmd.colorscheme("yugen")
+--vim.cmd.colorscheme("lackluster-dark")
+--vim.cmd.colorscheme("iceberg")
+vim.cmd.colorscheme("sober")
