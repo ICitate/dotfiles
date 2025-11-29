@@ -11,7 +11,8 @@ local capabilities = vim.tbl_deep_extend(
 -- Add the same capabilities to ALL server configurations.
 -- Refer to :h vim.lsp.config() for more information.
 vim.lsp.config("*", {
-  capabilities = capabilities
+  capabilities = capabilities,
+  root_markers = { '.git'}
 })
 
 local nachogroup = vim.api.nvim_create_augroup('nachogroup', {})
@@ -33,12 +34,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
 })
 
--- Learn the keybindings, see :help lsp-zero-keybindings
--- Learn to configure LSP servers, see :help lsp-zero-api-showcase
-require('mason').setup({})
-
-local lsp = require('mason-lspconfig')
-lsp.setup({})
 
 local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -55,7 +50,6 @@ cmp.setup({
         ["<C-Space>"] = cmp.mapping.complete(),
     }),
     sources = cmp.config.sources({
-        { name = "copilot", group_index = 2 },
         { name = 'nvim_lsp' },
         { name = 'luasnip' }, -- For luasnip users.
     }, {
@@ -74,3 +68,17 @@ vim.diagnostic.config({
         prefix = "",
     },
 })
+
+vim.lsp.config("luals", {})
+vim.lsp.config("clangd",  {
+  cmd = {
+    'clangd',
+    '--clang-tidy',
+    '--background-index',
+    '--offset-encoding=utf-8',
+  },
+  root_markers = { '.clangd', 'compile_commands.json' },
+  filetypes = { 'c', 'cpp' },
+})
+
+vim.lsp.enable({'luals', 'clangd'})

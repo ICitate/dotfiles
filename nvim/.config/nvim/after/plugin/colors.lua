@@ -2,4 +2,5 @@
 --vim.cmd.colorscheme("yugen")
 --vim.cmd.colorscheme("lackluster-dark")
 --vim.cmd.colorscheme("iceberg")
-vim.cmd.colorscheme("sober")
+--vim.cmd.colorscheme("sober")
+vim.cmd.colorscheme("techbase-hc")
