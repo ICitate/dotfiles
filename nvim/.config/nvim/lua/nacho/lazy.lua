@@ -50,16 +50,16 @@ require("lazy").setup({
       ]]
 
       -- Autocompletion
-      { 'hrsh7th/nvim-cmp', event = 'InsertEnter' },
-      { 'hrsh7th/cmp-buffer', event = 'InsertEnter' },
-      { 'hrsh7th/cmp-path', event = 'InsertEnter' },
-      { 'saadparwaiz1/cmp_luasnip', event = 'InsertEnter' },
-      { 'hrsh7th/cmp-nvim-lsp', event = 'InsertEnter' },
-      { 'hrsh7th/cmp-nvim-lua', event = 'InsertEnter' },
+      -- { 'hrsh7th/nvim-cmp', event = 'InsertEnter' },
+      -- { 'hrsh7th/cmp-buffer', event = 'InsertEnter' },
+      -- { 'hrsh7th/cmp-path', event = 'InsertEnter' },
+      -- { 'saadparwaiz1/cmp_luasnip', event = 'InsertEnter' },
+      -- { 'hrsh7th/cmp-nvim-lsp', event = 'InsertEnter' },
+      -- { 'hrsh7th/cmp-nvim-lua', event = 'InsertEnter' },
 
-      -- Snippets
-      { 'L3MON4D3/LuaSnip', event = 'InsertEnter' },
-      { 'rafamadriz/friendly-snippets', event = 'InsertEnter' },
+      -- -- Snippets
+      -- { 'L3MON4D3/LuaSnip', event = 'InsertEnter' },
+      -- { 'rafamadriz/friendly-snippets', event = 'InsertEnter' },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
