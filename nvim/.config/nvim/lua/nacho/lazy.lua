@@ -36,11 +36,69 @@ require("lazy").setup({
 
       { 'fatih/vim-go', ft = 'go' },
 
+      { 'nvim-treesitter/nvim-treesitter',
+        config = function()
+            require('nvim-treesitter.config').setup {
+              -- A list of parser names, or "all"
+              -- ensure_installed = { "javascript", "typescript", "c", "lua", "rust", "go" },
+
+              -- Install parsers synchronously (only applied to `ensure_installed`)
+              sync_install = false,
+
+              -- Automatically install missing parsers when entering buffer
+              -- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
+              auto_install = false,
+
+              highlight = {
+                -- `false` will disable the whole extension
+                enable = true,
+
+                -- Setting this to true will run `:h syntax` and tree-sitter at the same time.
+                -- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
+                -- Using this option may slow down your editor, and you may see some duplicate highlights.
+                -- Instead of true it can also be a list of languages
+                additional_vim_regex_highlighting = false,
+              },
+            }
+        end
+      },
+
       {
-        'nvim-treesitter/nvim-treesitter',
+        "folke/todo-comments.nvim",
+        dependencies = { "nvim-lua/plenary.nvim" },
+
+        opts = {  
+            highlight = {
+              -- This matches: KEYWORD, followed by optional (any_characters), followed by optional spaces and a colon
+              pattern = [[.*<(KEYWORDS)(\([^)]*\))?\s*:]], 
+              
+              comments_only = true, -- Safely process targets only inside Treesitter comment scopes
+            },
+            search = {
+              -- This ensures that Ripgrep searches (like Telescope) match the same parenthesized syntax
+              pattern = [[\b(KEYWORDS)(\([^)]*\))?\s*:]],
+            }
+        }
+          -- signs = false, -- Turn off if you don't want signs in the gutter column
       },
 
       { 'tpope/vim-fugitive', cmd = { 'Git', 'Gdiffsplit', 'Gread', 'Gwrite' } },
+
+      {
+        "folke/snacks.nvim",
+        ---@type snacks.Config
+        opts = {
+            indent = {
+                animate = {
+                    enabled = false,
+                },
+            -- your indent configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+            },
+        },
+      },
+
       --[[ Uncomment to enable these plugins
       { 'tpope/vim-dadbod' },
       { 'kristijanhusak/vim-dadbod-ui' },
